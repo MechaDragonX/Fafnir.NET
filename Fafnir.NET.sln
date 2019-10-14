@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fafnir.NET", "Fafnir.NET\Fafnir.NET.csproj", "{0824AB47-429C-4486-9025-E96C0501C8CC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0824AB47-429C-4486-9025-E96C0501C8CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0824AB47-429C-4486-9025-E96C0501C8CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0824AB47-429C-4486-9025-E96C0501C8CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0824AB47-429C-4486-9025-E96C0501C8CC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {31FC4AF3-EE13-4290-9B41-B9DE8CC3C403}
+	EndGlobalSection
+EndGlobal
