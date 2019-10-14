@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography;
 
 namespace Fafnir.NET
 {
@@ -6,25 +7,46 @@ namespace Fafnir.NET
     {
         static void Main(string[] args)
         {
+            // ASCII
+            Console.WriteLine(XORString("bapple"));
+            Console.WriteLine(XORString("banana"));
+            Console.WriteLine(XORString("orange"));
+            Console.WriteLine(XORString("Pokémon"));
+            // Unicode
+            Console.WriteLine(XORString("あなた"));
+            Console.WriteLine(XORString("日本")); 
+            Console.WriteLine(XORString("アメリカ"));
+            Console.WriteLine(XORString("ﾆﾝﾃﾝﾄﾞｰ"));
+
+            // All tests successfull
         }
-        private static int GenKey()
+        private static byte GenerateKey()
         {
-            Random rng = new Random();
-            return rng.Next(256);
+            RandomNumberGenerator rng = RandomNumberGenerator.Create();
+            byte[] bytes = new byte[1];
+            rng.GetBytes(bytes);
+            rng.Dispose();
+            return bytes[0];
         }
-        private static string XORString(string input)
+        private static string XORString(string source) 
         {
-            int key;
-            string output = input;
-            int current;
-            for(int i = 0; i < output.Length; i++)
+            string result = source;
+            byte key = GenerateKey();
+            int temp = 0;
+            foreach (char character in result)
             {
-                key = GenKey();
-                current = output[i];
-                current ^= key;
-                output.Replace(output[i], (char)current);
+                while (true)
+                {
+                    key = GenerateKey();
+                    temp ^= key;
+                    if (temp >= 32 && temp <= 127)
+                    {
+                        break;
+                    }
+                }
+                result = result.Replace(character, (char)temp);
             }
-            return output;
+            return result;
         }
     }
 }
